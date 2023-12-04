@@ -1,0 +1,53 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	background-color: #1a1a1a; /* Dark background color */
+	color: #ffffff; /* Text color */
+	border-radius: 10px;
+	top: 0px;
+	position: sticky;
+}
+
+.logo a {
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-decoration: none;
+	color: #ffffff; /* Logo text color */
+}
+
+.searchIcon {
+	color: black !important;
+	padding: 2px;
+}
+
+.searchbar {
+	background-color: white;
+	width: 80%;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	border-radius: 5px;
+}
+.logoImage {
+	height: 35px;
+	width: 35px;
+	margin-right: 10px;
+}
+.searchbarInput {
+	width: 75%;
+	outline: none;
+	border: none;
+}
+.searchbarInput:focus {
+	outline: none;
+}
+
+.navLinks a {
+	margin-left: 1.5rem;
+	text-decoration: none;
+	color: #ffffff; /* Link text color */
+}
+
+/* Add any additional styles based on your design preferences */
