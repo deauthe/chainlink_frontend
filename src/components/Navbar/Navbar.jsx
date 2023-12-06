@@ -20,9 +20,9 @@ const Navbar = () => {
 				<input placeholder="search memex" className={styles.searchbarInput} />
 			</div>
 			<div className={styles.navLinks}>
-				<Link href="/about">About</Link>
+				<Link href="/profile">Profile</Link>
 				<Link href="/services">Mint</Link>
-				<Link href="/contact">Explore</Link>
+				<Link href="/">Explore</Link>
 			</div>
 		</nav>
 	);

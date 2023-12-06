@@ -29,7 +29,8 @@
 		".next/types/**/*.ts",
 		"src/app/page.jsx",
 		"src/app/mint/page.jsx",
-		"src/components/FileSelectButton/FileSelectButton.jsx"
+		"src/components/FileSelectButton/FileSelectButton.jsx",
+		"src/components/Navbar/Navbar.jsx"
 	],
 	"exclude": ["node_modules"]
 }
