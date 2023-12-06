@@ -1,0 +1,27 @@
+.feed {
+	flex: 8;
+	align-content: center;
+}
+
+.feedWrapper {
+	padding: 20px;
+}
+
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+.listing {
+	width: 320px;
+	height: 320px;
+	padding-bottom: 50px;
+}
+
+.pageHeading {
+	font-size: 30px;
+	text-decoration: wavy;
+	text-wrap: wrap;
+	align-self: center;
+}
