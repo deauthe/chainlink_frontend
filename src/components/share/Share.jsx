@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { PermMedia, EmojiEmotions } from "@material-ui/icons";
 import FileSelectButton from "@/components/FileSelectButton/FileSelectButton";
 import "./share.css";
@@ -8,12 +8,16 @@ export default function Share() {
   const [selectedEmoji, setSelectedEmoji] = useState(null);
   const canvasRef = useRef(null);
   const [text, setText] = useState("");
-  const [overlayPosition, setOverlayPosition] = useState({ x: 80, y: 50 });
-  const [overlayScale, setOverlayScale] = useState(0.1); // Initialize with a small scale
-  const [rotationAngle, setRotationAngle] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-  const emojiImg = new Image();
+  const [textPosition, setTextPosition] = useState({ x: 80, y: 50 });
+  const [textScale, setTextScale] = useState(1);
+  const [isDraggingText, setIsDraggingText] = useState(false);
+  const [dragStartText, setDragStartText] = useState({ x: 0, y: 0 });
+
+  const [emojiPosition, setEmojiPosition] = useState({ x: 80, y: 50 });
+  const [emojiScale, setEmojiScale] = useState(0.1);
+  const [isDraggingEmoji, setIsDraggingEmoji] = useState(false);
+  const [dragStartEmoji, setDragStartEmoji] = useState({ x: 0, y: 0 });
+
   useEffect(() => {
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
@@ -26,28 +30,43 @@ export default function Share() {
         context.drawImage(img, 0, 0, img.width, img.height);
 
         if (selectedEmoji) {
+          const emojiImg = new Image();
           emojiImg.onload = () => {
-            const { x, y } = overlayPosition;
-            const width = emojiImg.width * overlayScale;
-            const height = emojiImg.height * overlayScale;
+            const { x, y } = emojiPosition;
+            const width = emojiImg.width * emojiScale;
+            const height = emojiImg.height * emojiScale;
 
             context.save();
             context.translate(x + width / 2, y + height / 2);
-            context.rotate((rotationAngle * Math.PI) / 180);
             context.drawImage(emojiImg, -width / 2, -height / 2, width, height);
             context.restore();
           };
           emojiImg.src = selectedEmoji;
         }
+
+        context.font = "20px Arial";
+        context.fillStyle = "white";
+        context.textBaseline = "top";
+        const { x, y } = textPosition;
+        const width = canvas.width;
+        const height = canvas.height;
+
+        context.save();
+        context.translate(x + width / 2, y + height / 2);
+        context.scale(textScale, textScale);
+        context.fillText(text, -width / 2, -height / 2);
+        context.restore();
       };
       img.src = URL.createObjectURL(selectedFile);
     }
   }, [
     selectedFile,
     selectedEmoji,
-    overlayPosition,
-    overlayScale,
-    rotationAngle,
+    text,
+    textPosition,
+    textScale,
+    emojiPosition,
+    emojiScale,
   ]);
 
   const handleFileSelect = (file) => {
@@ -57,6 +76,9 @@ export default function Share() {
 
   const handleAddEmoji = (emoji) => {
     setSelectedEmoji(emoji);
+    // Reset emoji position and scale
+    setEmojiPosition({ x: 80, y: 50 });
+    setEmojiScale(0.1);
   };
 
   const handleTextChange = (e) => {
@@ -64,64 +86,72 @@ export default function Share() {
   };
 
   const handleAddText = () => {
-    const canvas = canvasRef.current;
-    const context = canvas.getContext("2d");
-
-    context.font = "20px Arial";
-    context.fillStyle = "black";
-    context.textBaseline = "top";
-
-    const { x, y } = overlayPosition;
-    const width = canvas.width;
-    const height = canvas.height;
-
-    context.save();
-    context.translate(x + width / 2, y + height / 2);
-    context.rotate((rotationAngle * Math.PI) / 180);
-    context.fillText(text, -width / 2, -height / 2);
-    context.restore();
+    // Reset text position and scale
+    setTextPosition({ x: 80, y: 50 });
+    setTextScale(1);
   };
 
   const handleMint = () => {
     console.log(`minting....${selectedFile ? selectedFile.name : "something"}`);
   };
 
-  const handleMouseDown = (e) => {
-    const { offsetX, offsetY } = e.nativeEvent;
-
-    if (
-      offsetX >= overlayPosition.x &&
-      offsetX <= overlayPosition.x + emojiImg.width * overlayScale &&
-      offsetY >= overlayPosition.y &&
-      offsetY <= overlayPosition.y + emojiImg.height * overlayScale
-    ) {
-      setIsDragging(true);
-      setDragStart({ x: e.clientX, y: e.clientY });
-    }
+  const handleMouseDownText = (e) => {
+    setIsDraggingText(true);
+    setDragStartText({ x: e.clientX, y: e.clientY });
   };
 
-  const handleMouseMove = (e) => {
-    if (isDragging) {
-      const dx = e.clientX - dragStart.x;
-      const dy = e.clientY - dragStart.y;
+  const handleMouseMoveText = (e) => {
+    if (isDraggingText) {
+      const dx = e.clientX - dragStartText.x;
+      const dy = e.clientY - dragStartText.y;
 
-      setOverlayPosition({
-        x: overlayPosition.x + dx,
-        y: overlayPosition.y + dy,
+      setTextPosition({
+        x: textPosition.x + dx,
+        y: textPosition.y + dy,
       });
 
-      setDragStart({ x: e.clientX, y: e.clientY });
+      setDragStartText({ x: e.clientX, y: e.clientY });
     }
   };
 
-  const handleMouseUp = () => {
-    setIsDragging(false);
+  const handleMouseUpText = () => {
+    setIsDraggingText(false);
   };
 
-  const handleScale = (scaleFactor) => {
-    const newScale = overlayScale + scaleFactor;
-    if (newScale > 0.1) {
-      setOverlayScale(newScale);
+  const handleScaleText = (scaleFactor) => {
+    const newTextScale = textScale + scaleFactor;
+    if (newTextScale > 0.1) {
+      setTextScale(newTextScale);
+    }
+  };
+
+  const handleMouseDownEmoji = (e) => {
+    setIsDraggingEmoji(true);
+    setDragStartEmoji({ x: e.clientX, y: e.clientY });
+  };
+
+  const handleMouseMoveEmoji = (e) => {
+    if (isDraggingEmoji) {
+      const dx = e.clientX - dragStartEmoji.x;
+      const dy = e.clientY - dragStartEmoji.y;
+
+      setEmojiPosition({
+        x: emojiPosition.x + dx,
+        y: emojiPosition.y + dy,
+      });
+
+      setDragStartEmoji({ x: e.clientX, y: e.clientY });
+    }
+  };
+
+  const handleMouseUpEmoji = () => {
+    setIsDraggingEmoji(false);
+  };
+
+  const handleScaleEmoji = (scaleFactor) => {
+    const newEmojiScale = emojiScale + scaleFactor;
+    if (newEmojiScale > 0.1) {
+      setEmojiScale(newEmojiScale);
     }
   };
 
@@ -132,9 +162,9 @@ export default function Share() {
           <canvas
             ref={canvasRef}
             className="shareCanvas"
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
+            onMouseDown={handleMouseDownText}
+            onMouseMove={handleMouseMoveText}
+            onMouseUp={handleMouseUpText}
           />
           <input
             placeholder="new funny shit?"
@@ -168,14 +198,27 @@ export default function Share() {
                     }`}
                     style={{ width: "30px", height: "30px" }}
                     onClick={() => handleAddEmoji(emoji)}
+                    onMouseDown={handleMouseDownEmoji}
+                    onMouseMove={handleMouseMoveEmoji}
+                    onMouseUp={handleMouseUpEmoji}
+                    onWheel={(e) => handleScaleEmoji(e.deltaY > 0 ? 0.1 : -0.1)}
                   />
                 )
               )}
             </div>
           </div>
-          <button onClick={handleMint} className="shareButton">
-            Mint
-          </button>
+          <div>
+            <button onClick={handleMint} className="shareButton">
+              Mint
+            </button>
+            <button onClick={handleAddEmoji} style={{ marginLeft: "10px" }}>
+              Add Emoji
+            </button>
+            <button onClick={() => handleScaleText(0.1)}>Scale Text Up</button>
+            <button onClick={() => handleScaleText(-0.1)}>
+              Scale Text Down
+            </button>
+          </div>
         </div>
       </div>
     </div>
