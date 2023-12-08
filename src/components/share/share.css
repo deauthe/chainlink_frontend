@@ -1,6 +1,6 @@
 .share {
-	width: 100%;
-	height: 170px;
+	width: auto;
+	height: auto;
 	border-radius: 10px;
 	-webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
 	box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
@@ -9,7 +9,9 @@
 .shareWrapper {
 	padding: 10px;
 }
-
+.shareHr {
+	background-color: red;
+}
 .shareTop {
 	display: flex;
 	align-items: center;
@@ -23,12 +25,29 @@
 	object-fit: cover;
 	margin: 10px;
 }
+.emoji {
+	height: auto;
+	width: auto;
+	margin: 3px;
+	background-color: #666;
+	padding: 1px;
+	border-color: #2b2323;
+	border-radius: 5px;
+}
+.buttonWrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 
 .shareInput {
 	border: none;
 	width: 80%;
 }
-
+.editWrapper {
+	display: flex;
+	overflow-x: scroll;
+}
 .shareInput:focus {
 	outline: none;
 }
@@ -75,4 +94,34 @@
 	margin-right: 20px;
 	cursor: pointer;
 	color: white;
+}
+
+.emojiOptions {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.editButtons {
+	border: none;
+	padding: 7px;
+	border-radius: 5px;
+	background-color: #313636;
+	font-weight: 500;
+	margin-right: 20px;
+	cursor: pointer;
+	color: rgb(255, 255, 255);
+}
+
+.addTextButton {
+	border: none;
+	padding-top: 0;
+	padding-bottom: 0;
+	padding: 7px;
+	border-radius: 5px;
+	background-color: #313636;
+	font-weight: 500;
+	margin-right: 20px;
+	cursor: pointer;
+	color: rgb(255, 255, 255);
 }

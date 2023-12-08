@@ -2,8 +2,9 @@
 import "./profile.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Sidebar from "@/components/sidebar/Sidebar";
-import Feed from "@/components/feed/Feed";
 import Rightbar from "@/components/rightbar/Rightbar";
+import Share from "@/components/share/Share";
+import Feed from "@/components/feed/Feed";
 
 export default function Profile() {
 	return (
@@ -28,11 +29,16 @@ export default function Profile() {
 						<div className="profileInfo">
 							<h4 className="profileInfoName">Safak Kocaoglu</h4>
 							<span className="profileInfoDesc">Hello my friends!</span>
+							<hr className="divider" />
 						</div>
 					</div>
 					<div className="profileRightBottom">
-						<Feed />
-						<Rightbar profile />
+						<div className="middleSec">
+							<Share />
+							<Feed />
+						</div>
+
+						<Rightbar className="rightbar" />
 					</div>
 				</div>
 			</div>

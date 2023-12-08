@@ -1,6 +1,6 @@
 import "./rightbar.css";
 
-export default function Rightbar({ profile }) {
+export default function Rightbar() {
 	const HomeRightbar = () => {
 		return (
 			<>

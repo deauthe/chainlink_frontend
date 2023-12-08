@@ -17,25 +17,27 @@ export default function Feed() {
 		return result;
 	};
 
-	const groupedNfts = createChunks(sortedPosts, 10);
+	const groupedNfts = createChunks(sortedPosts, 3);
 	return (
 		<div className="feed">
 			<h1 className="pageHeading">Trending MarketPlace</h1>
-
-			<div className="wrapper">
-				{groupedNfts.map((e) =>
-					e.map((p) =>
-						p.isListed ? (
-							<div className="listing">
-								{" "}
-								<SellingCard key={p.id} post={p} />
-							</div>
-						) : (
-							NaN
+			<div className="feedWrapper">
+				<div className="wrapper">
+					{groupedNfts.map((e) =>
+						e.map((p) =>
+							p.isListed ? (
+								<div className="listing">
+									{" "}
+									<SellingCard key={p.id} post={p} />
+								</div>
+							) : (
+								NaN
+							)
 						)
-					)
-				)}
+					)}
+				</div>
 			</div>
 		</div>
 	);
 }
+
