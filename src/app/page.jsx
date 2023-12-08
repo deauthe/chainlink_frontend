@@ -1,6 +1,5 @@
 "use client";
 import Home from "@/app/home/page";
-import Navbar from "@/components/Navbar/Navbar";
 
 export default function App() {
 	return (

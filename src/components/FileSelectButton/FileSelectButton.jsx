@@ -1,5 +1,6 @@
 // FileSelectorButton.js
-
+import "./FileSelectButton.css";
+import { PermMedia } from "@material-ui/icons";
 import React, { useRef } from "react";
 
 const FileSelectorButton = ({ onFileSelect }) => {
@@ -14,7 +15,14 @@ const FileSelectorButton = ({ onFileSelect }) => {
 
 	return (
 		<div>
-			<button onClick={() => fileInputRef.current.click()}>Select File</button>
+			<button
+				className="selectFileButton"
+				onClick={() => fileInputRef.current.click()}
+			>
+				<PermMedia htmlColor="white" className="shareIcon" />
+				Select File
+			</button>
+
 			<input
 				type="file"
 				ref={fileInputRef}

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 import SearchIcon from "@mui/icons-material/Search";
-import Image from "next/image";
+import Web3ConnectButton from "@/components/web3ConnectButton/web3ConnectButton";
 
 const Navbar = () => {
 	return (
@@ -19,10 +19,17 @@ const Navbar = () => {
 				<SearchIcon className={styles.searchIcon} />
 				<input placeholder="search memex" className={styles.searchbarInput} />
 			</div>
+			<Web3ConnectButton className={styles.links} />
 			<div className={styles.navLinks}>
-				<Link href="/profile">Profile</Link>
-				<Link href="/services">Mint</Link>
-				<Link href="/">Explore</Link>
+				<Link className={styles.links} href="/profile">
+					Profile
+				</Link>
+				<Link className={styles.links} href="/services">
+					Mint
+				</Link>
+				<Link className={styles.links} href="/">
+					Explore
+				</Link>
 			</div>
 		</nav>
 	);

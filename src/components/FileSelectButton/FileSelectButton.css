@@ -1,0 +1,10 @@
+.selectFileButton {
+	border-radius: 5px;
+	border-color: transparent;
+	box-shadow: inset;
+	background-color: rgb(216, 122, 122);
+	color: aliceblue;
+	padding: 8px;
+	display: flex;
+	justify-content: space-between;
+}

@@ -1,5 +1,5 @@
 import "./share.css";
-import { PermMedia, Label, Room, EmojiEmotions } from "@material-ui/icons";
+import { PermMedia } from "@material-ui/icons";
 import FileSelectButton from "@/components/FileSelectButton/FileSelectButton";
 import { useState } from "react";
 
@@ -27,7 +27,6 @@ export default function Share() {
 				<div className="shareBottom">
 					<div className="shareOptions">
 						<div className="shareOption">
-							<PermMedia htmlColor="tomato" className="shareIcon" />
 							<FileSelectButton
 								onFileSelect={handleFileSelect}
 								className="fileChooseButton"
@@ -36,7 +35,7 @@ export default function Share() {
 							</FileSelectButton>
 						</div>
 					</div>
-					<button onClick={handleMint} className="shareButton">
+					<button className="shareButton" onClick={handleMint}>
 						Mint
 					</button>
 				</div>

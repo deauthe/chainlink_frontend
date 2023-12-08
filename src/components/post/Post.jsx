@@ -3,6 +3,7 @@ import { MoreVert } from "@material-ui/icons";
 import { Users } from "../dummyData";
 import { useState } from "react";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import Link from "next/link";
 
 export default function Post({ post }) {
 	const [like, setLike] = useState(post.like);
@@ -17,11 +18,15 @@ export default function Post({ post }) {
 			<div className="postWrapper">
 				<div className="postTop">
 					<div className="postTopLeft">
-						<img
-							className="postProfileImg"
-							src={Users.filter((u) => u.id === post?.userId)[0].profilePicture}
-							alt=""
-						/>
+						<Link href="./profile">
+							<img
+								className="postProfileImg"
+								src={
+									Users.filter((u) => u.id === post?.userId)[0].profilePicture
+								}
+								alt=""
+							/>
+						</Link>
 						<span className="postUsername">
 							{Users.filter((u) => u.id === post?.userId)[0].username}
 						</span>
