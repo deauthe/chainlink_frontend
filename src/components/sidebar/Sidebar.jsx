@@ -1,4 +1,5 @@
 import "./sidebar.css";
+import Link from "next/link";
 import { FaRss, FaBookmark } from "react-icons/fa";
 import { IoMdChatboxes } from "react-icons/io";
 import { MdEmojiEvents } from "react-icons/md";
@@ -10,21 +11,29 @@ export default function Sidebar() {
 				<ul className="sidebarList">
 					<li className="sidebarListItem">
 						<FaRss className="sidebarIcon" />
-						<span className="sidebarListItemText">Memes</span>
+						<Link href="/" className="sidebarListItemText">
+							Feed
+						</Link>
 					</li>
 					<li className="sidebarListItem">
 						<IoMdChatboxes className="sidebarIcon" />
-						<span className="sidebarListItemText">Discussions</span>
+						<Link href="/profile" className="sidebarListItemText">
+							Discussion
+						</Link>
 					</li>
 
 					<li className="sidebarListItem">
 						<FaBookmark className="sidebarIcon" />
-						<span className="sidebarListItemText">Bookmarks</span>
+						<Link href="/" className="sidebarListItemText">
+							BookMarks
+						</Link>
 					</li>
 
 					<li className="sidebarListItem">
 						<MdEmojiEvents className="sidebarIcon" />
-						<span className="sidebarListItemText">Contests</span>
+						<Link href="/competition" className="sidebarListItemText">
+							Contests
+						</Link>
 					</li>
 				</ul>
 				<hr className="sidebarHr" />
