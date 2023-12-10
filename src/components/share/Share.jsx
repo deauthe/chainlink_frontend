@@ -109,6 +109,7 @@ export default function Share() {
       .then((res) => res.blob())
       .then((blob) => {
         const file = new File([blob], "meme.png", { type: "image/png" });
+         
 
         console.log("Minting with the created meme file:", file);
       })

@@ -5,8 +5,33 @@ import Sidebar from "@/components/sidebar/Sidebar";
 import Rightbar from "@/components/rightbar/Rightbar";
 import Share from "@/components/share/Share";
 import Feed from "@/components/feed/Feed";
+import { Buffer } from "buffer";
+import { create as ipfsHttpClient } from "ipfs-http-client";
+import { Row, Form, Button } from 'react-bootstrap'
+const projectId = "2ONjCGu7UlrPOzmZ3hqy8WlN2GC";
+const projectSecretKey = "43cc6a424bd74fd70d8a175972fbba87";
+const auth = `Basic ${Buffer.from(`${projectId}:${projectSecretKey}`).toString(
+	"base64"
+  )}`;
+  const subdomain = "https://uniqo-marketplace.infura-ipfs.io";
+  const client = ipfsHttpClient({
+	host: "infura-ipfs.io",
+	port: 5001,
+	protocol: "https",
+	headers: {
+	  authorization: auth,
+	},
+  });
+
+
 
 export default function Profile() {
+
+	
+
+
+
+	
 	return (
 		<>
 			<Navbar />
