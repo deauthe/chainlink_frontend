@@ -35,7 +35,7 @@ export default function RootLayout() {
 
 	return (
 		<div>
-			<Web3Wallet />
+			<Web3Wallet className="walletButtons" />
 		</div>
 	);
 }
