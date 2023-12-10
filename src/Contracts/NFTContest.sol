@@ -158,9 +158,7 @@ contract NFTContest is ERC721URIStorage, Ownable {
     }
 
     function getNFTValueInUSD() internal view returns (uint256) {
-        // Implement your own logic to get the USD value of NFT
-        // (e.g., using Chainlink price feeds)
-        return 0; // Placeholder, update with actual logic
+        return 0;
     }
 
     function fetchContests() internal view returns (Contest[] memory) {
