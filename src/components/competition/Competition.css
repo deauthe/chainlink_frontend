@@ -10,13 +10,15 @@
 	margin-bottom: 1rem;
 }
 
-.searchBar {
+.searchBarInput {
 	margin-bottom: 1rem;
 	background-color: #eaf1f1;
 	border-radius: 20px;
 	padding-left: 10px;
 	border-color: #666;
-	width: 20%;
+	border: darkgray;
+	width: 100%;
+	color: black;
 }
 
 .feedWrapper {

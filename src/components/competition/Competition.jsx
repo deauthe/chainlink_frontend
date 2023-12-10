@@ -19,6 +19,7 @@ const Competition = () => {
 			<h1 className="pageHeading">All Competitions</h1>
 			<div className="searchBar">
 				<input
+					className="searchBarInput"
 					type="text"
 					placeholder="Search competitions..."
 					value={searchTerm}
