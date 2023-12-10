@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Competitions } from "./data.js";
 import CompetitionCard from "./competitionCard.jsx";
-import MemeComponent1 from "./MemeComponent1";
 import "./Competition.css";
 
 const Competition = () => {
@@ -26,11 +25,10 @@ const Competition = () => {
 					onChange={handleSearch}
 				/>
 			</div>
-			<div className="feedWrapper">
+			<div className="feedWrapper ">
 				<div className="wrapper">
 					<div className="competitionTable">
 						<div className="competitionColumn">
-							<h2 className="columnHeading">Competitions</h2>
 							{filteredCompetitions.map((competition) => (
 								<div key={competition.id} className="competitionCardWrapper">
 									<CompetitionCard

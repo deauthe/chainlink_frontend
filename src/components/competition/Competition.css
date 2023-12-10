@@ -1,29 +1,42 @@
 .feed {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .pageHeading {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+	font-size: 2rem;
+	margin-bottom: 1rem;
 }
 
 .searchBar {
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
+	background-color: #eaf1f1;
+	border-radius: 20px;
+	padding-left: 10px;
+	border-color: #666;
+	width: 20%;
 }
 
 .feedWrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
-  gap: 16px; /* Adjust the gap based on your preference */
 }
 
 .wrapper {
-  width: 100%;
+	width: 100%;
 }
 
 .competitionCardWrapper {
-  max-width: 345px;
-  width: 100%; /* Ensure the card takes full width */
+	margin: 20px;
+	background-color: #fff; /* Set the background color of your card */
+	border-radius: 10px; /* Set border-radius for rounded corners */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.competitionColumn {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
 }
