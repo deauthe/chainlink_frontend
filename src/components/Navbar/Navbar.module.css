@@ -50,6 +50,9 @@
 	flex-direction: row;
 	text-decoration: none;
 	color: #fcfcfc; /* Link text color */
+	border-radius: 10px;
+	background-color: rgba(81, 83, 83, 0.432);
+	padding: 5px;
 }
 
 .navlinks {
@@ -57,3 +60,12 @@
 }
 
 /* Add any additional styles based on your design preferences */
+.connectButton {
+	margin-left: 1.5rem;
+	flex-direction: row;
+	text-decoration: none;
+	color: #fcfcfc; /* Link text color */
+	border-radius: 10px;
+	background-color: rgba(127, 255, 212, 0.432);
+	padding: 5px;
+}

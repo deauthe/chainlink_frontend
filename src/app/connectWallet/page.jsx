@@ -1,14 +1,13 @@
 "use client";
+import "./connectWallet.css";
 import React from "react";
-import SellingCard from "@/components/SellingCard/SellingCard";
-import { Posts } from "../../components/dummyData";
 import Web3ConnectButton from "@/components/web3ConnectButton/web3ConnectButton";
-const test = () => {
+const ConnectWallet = () => {
 	return (
-		<div>
+		<div className="root">
 			<Web3ConnectButton />
 		</div>
 	);
 };
 
-export default test;
+export default ConnectWallet;

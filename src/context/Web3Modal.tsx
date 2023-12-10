@@ -64,7 +64,7 @@ export default function Web3Wallet() {
 	const events = useWeb3ModalEvents();
 
 	return (
-		<div className="web3Buttons">
+		<div>
 			<w3m-button />
 			<w3m-network-button />
 			{/* <w3m-connect-button /> */}

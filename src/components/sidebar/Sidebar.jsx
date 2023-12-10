@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaRss, FaBookmark } from "react-icons/fa";
 import { IoMdChatboxes } from "react-icons/io";
 import { MdEmojiEvents } from "react-icons/md";
+import Web3ConnectButton from "@/components/web3ConnectButton/web3ConnectButton";
 
 export default function Sidebar() {
 	return (
