@@ -1,0 +1,29 @@
+.feed {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pageHeading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.searchBar {
+  margin-bottom: 1rem;
+}
+
+.feedWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+  gap: 16px; /* Adjust the gap based on your preference */
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.competitionCardWrapper {
+  max-width: 345px;
+  width: 100%; /* Ensure the card takes full width */
+}
