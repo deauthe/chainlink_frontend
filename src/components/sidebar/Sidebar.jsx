@@ -1,6 +1,7 @@
 import "./sidebar.css";
-import { RssFeed, Chat, Bookmark, Event } from "@material-ui/icons";
-import { Users } from "../dummyData";
+import { FaRss, FaBookmark } from "react-icons/fa";
+import { IoMdChatboxes } from "react-icons/io";
+import { MdEmojiEvents } from "react-icons/md";
 
 export default function Sidebar() {
 	return (
@@ -8,21 +9,21 @@ export default function Sidebar() {
 			<div className="sidebarWrapper">
 				<ul className="sidebarList">
 					<li className="sidebarListItem">
-						<RssFeed className="sidebarIcon" />
+						<FaRss className="sidebarIcon" />
 						<span className="sidebarListItemText">Memes</span>
 					</li>
 					<li className="sidebarListItem">
-						<Chat className="sidebarIcon" />
+						<IoMdChatboxes className="sidebarIcon" />
 						<span className="sidebarListItemText">Discussions</span>
 					</li>
 
 					<li className="sidebarListItem">
-						<Bookmark className="sidebarIcon" />
+						<FaBookmark className="sidebarIcon" />
 						<span className="sidebarListItemText">Bookmarks</span>
 					</li>
 
 					<li className="sidebarListItem">
-						<Event className="sidebarIcon" />
+						<MdEmojiEvents className="sidebarIcon" />
 						<span className="sidebarListItemText">Contests</span>
 					</li>
 				</ul>

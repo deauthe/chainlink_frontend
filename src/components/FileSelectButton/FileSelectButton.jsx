@@ -1,6 +1,6 @@
 // FileSelectorButton.js
 import "./FileSelectButton.css";
-import { PermMedia } from "@material-ui/icons";
+import { BsThreeDotsVertical } from "react-icons/bs";
 import React, { useRef } from "react";
 
 const FileSelectorButton = ({ onFileSelect }) => {
@@ -19,7 +19,7 @@ const FileSelectorButton = ({ onFileSelect }) => {
 				className="selectFileButton"
 				onClick={() => fileInputRef.current.click()}
 			>
-				<PermMedia htmlColor="white" className="shareIcon" />
+				<BsThreeDotsVertical htmlColor="white" className="shareIcon" />
 				Select File
 			</button>
 

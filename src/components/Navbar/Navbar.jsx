@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./Navbar.module.css";
-import SearchIcon from "@mui/icons-material/Search";
+import { IoSearch } from "react-icons/io5";
 import Web3ConnectButton from "@/components/web3ConnectButton/web3ConnectButton";
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
 				</Link>
 			</div>
 			<div className={styles.searchbar}>
-				<SearchIcon className={styles.searchIcon} />
+				<IoSearch className={styles.searchIcon} />
 				<input placeholder="search memex" className={styles.searchbarInput} />
 			</div>
 			<Web3ConnectButton className={styles.links} />

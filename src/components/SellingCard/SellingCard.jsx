@@ -1,9 +1,8 @@
 import "./sellingCard.css";
-import { MoreVert } from "@material-ui/icons";
+
 import { Users } from "../../components/dummyData";
 import { useState } from "react";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import { useRouter } from "next/router";
+import { FcLike } from "react-icons/fc";
 
 export default function Post({ post }) {
 	const [like, setLike] = useState(post.like);
@@ -45,7 +44,7 @@ export default function Post({ post }) {
 				</div>
 				<div className="postBottom">
 					<div className="postBottomLeft">
-						<FavoriteIcon className="likeIcon" onClick={likeHandler} />
+						<FcLike className="likeIcon" onClick={likeHandler} />
 
 						<span className="postLikeCounter">{like} people like it</span>
 					</div>

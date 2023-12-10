@@ -1,8 +1,8 @@
 import "./post.css";
-import { MoreVert } from "@material-ui/icons";
+import { BsThreeDotsVertical } from "react-icons/bs";
 import { Users } from "../dummyData";
 import { useState } from "react";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import { FcLike } from "react-icons/fc";
 import Link from "next/link";
 
 export default function Post({ post }) {
@@ -33,7 +33,7 @@ export default function Post({ post }) {
 						<span className="postDate">{post.date}</span>
 					</div>
 					<div className="postTopRight">
-						<MoreVert />
+						<BsThreeDotsVertical />
 					</div>
 				</div>
 				<div className="postCenter">
@@ -42,7 +42,7 @@ export default function Post({ post }) {
 				</div>
 				<div className="postBottom">
 					<div className="postBottomLeft">
-						<FavoriteIcon className="likeIcon" onClick={likeHandler} />
+						<FcLike className="likeIcon" onClick={likeHandler} />
 
 						<span className="postLikeCounter">{like} people like it</span>
 					</div>
