@@ -44,7 +44,7 @@ export default function Share() {
 	const [emojiScale, setEmojiScale] = useState(0.1);
 	const [isDraggingEmoji, setIsDraggingEmoji] = useState(false);
 	const [dragStartEmoji, setDragStartEmoji] = useState({ x: 0, y: 0 });
-	const [price, setPrice] = useState("0");
+	const [price, setPrice] = useState("");
 	const [description, setDescription] = useState("");
 	const [listingPrice, setListingPrice] = useState("");
 	const [redditUrl, setRedditUrl] = useState(undefined);
