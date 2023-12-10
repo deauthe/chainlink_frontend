@@ -1,3 +1,4 @@
+import "./web3ConnectButton.css";
 import {
 	useWeb3ModalProvider,
 	useWeb3ModalAccount,
@@ -33,7 +34,7 @@ export default function RootLayout() {
 
 	return (
 		<div>
-			<Web3Wallet />
+			<Web3Wallet className="walletButtons" />
 		</div>
 	);
 }

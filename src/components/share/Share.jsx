@@ -57,6 +57,7 @@ export default function Share() {
 				context.restore();
 			};
 			img.src = URL.createObjectURL(selectedFile);
+			console.log(img.src);
 		}
 	}, [
 		selectedFile,
@@ -186,6 +187,15 @@ export default function Share() {
 								<span className="shareOptionText">Photo or Video</span>
 							</FileSelectButton>
 						</div>
+						<div className="nftDescription">
+							<input
+								type="text"
+								className="descriptionInput"
+								placeholder="description"
+							/>
+							<input type="text" className="priceInput" placeholder="price" />
+						</div>
+
 						<div className="emojiOptions">
 							{["assets/emo1.png", "assets/emo2.png", "assets/emo3.png"].map(
 								(emoji, index) => (
@@ -206,31 +216,31 @@ export default function Share() {
 								)
 							)}
 						</div>
-					</div>
-					<div className="buttonWrapper">
-						<button onClick={handleMint} className="shareButton">
-							Mint
-						</button>
-						<div className="editWrapper">
-							<button
-								className="editButtons"
-								onClick={handleAddEmoji}
-								style={{ marginLeft: "10px" }}
-							>
-								Add Emoji
+						<div className="buttonWrapper">
+							<button onClick={handleMint} className="shareButton">
+								Mint
 							</button>
-							<button
-								className="editButtons"
-								onClick={() => handleScaleText(0.1)}
-							>
-								Scale Text Up
-							</button>
-							<button
-								className="editButtons"
-								onClick={() => handleScaleText(-0.1)}
-							>
-								Scale Text Down
-							</button>
+							<div className="editWrapper">
+								<button
+									className="editButtons"
+									onClick={handleAddEmoji}
+									style={{ marginLeft: "10px" }}
+								>
+									Add Emoji
+								</button>
+								<button
+									className="editButtons"
+									onClick={() => handleScaleText(0.1)}
+								>
+									Scale Text Up
+								</button>
+								<button
+									className="editButtons"
+									onClick={() => handleScaleText(-0.1)}
+								>
+									Scale Text Down
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
