@@ -6,6 +6,7 @@ import {
 	useWeb3ModalState,
 	useWeb3ModalTheme,
 } from "@web3modal/ethers5/react";
+import "./Web3Modal.css";
 
 // 1. Get projectId
 const projectId = "2fd657a4f9b9da4b73ccec4ae4a7fd34";
@@ -63,7 +64,7 @@ export default function Web3Wallet() {
 	const events = useWeb3ModalEvents();
 
 	return (
-		<>
+		<div className="web3Buttons">
 			<w3m-button />
 			<w3m-network-button />
 			{/* <w3m-connect-button /> */}
@@ -77,6 +78,6 @@ export default function Web3Wallet() {
 			{/* <pre>{JSON.stringify(state, null, 2)}</pre>
         <pre>{JSON.stringify({ themeMode, themeVariables }, null, 2)}</pre>
         <pre>{JSON.stringify(events, null, 2)}</pre> */}
-		</>
+		</div>
 	);
 }
