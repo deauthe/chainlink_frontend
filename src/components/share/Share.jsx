@@ -16,6 +16,15 @@ export default function Share() {
 	const [emojiScale, setEmojiScale] = useState(0.1);
 	const [isDraggingEmoji, setIsDraggingEmoji] = useState(false);
 	const [dragStartEmoji, setDragStartEmoji] = useState({ x: 0, y: 0 });
+	const [price, setPrice] = useState(0);
+	const [description, setDescription] = useState("");
+
+	const handlePriceChange = (event) => {
+		setPrice(event.target.value);
+	};
+	const handleDescriptionChange = (event) => {
+		setDescription(...event.target.value);
+	};
 
 	useEffect(() => {
 		const canvas = canvasRef.current;
@@ -190,10 +199,18 @@ export default function Share() {
 						<div className="nftDescription">
 							<input
 								type="text"
+								value={description}
+								onChange={handleDescriptionChange}
 								className="descriptionInput"
 								placeholder="description"
 							/>
-							<input type="text" className="priceInput" placeholder="price" />
+							<input
+								type="text"
+								value={price}
+								onChange={handlePriceChange}
+								className="priceInput"
+								placeholder="price"
+							/>
 						</div>
 
 						<div className="emojiOptions">

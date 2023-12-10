@@ -32,9 +32,10 @@
 	border-radius: 5px;
 }
 .logoImage {
-	height: 35px;
-	width: 35px;
+	height: 50px;
+	width: 50px;
 	margin-right: 10px;
+	border-radius: 100%;
 }
 .searchbarInput {
 	width: 75%;
