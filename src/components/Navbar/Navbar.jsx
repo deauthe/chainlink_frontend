@@ -2,7 +2,6 @@ import Link from "next/link";
 import styles from "./Navbar.module.css";
 import { IoSearch } from "react-icons/io5";
 import Web3ConnectButton from "@/components/web3ConnectButton/web3ConnectButton";
-import { Fontdiner_Swanky } from "next/font/google";
 
 const Navbar = () => {
 	return (
@@ -11,7 +10,7 @@ const Navbar = () => {
 				<Link href="/">
 					<img
 						className={styles.logoImage}
-						src="assets/Memex.jpeg"
+						src="assets/Memex.png"
 						alt="Memex"
 					/>
 				</Link>

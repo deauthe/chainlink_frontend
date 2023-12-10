@@ -27,6 +27,7 @@ export default function RootLayout() {
 
 	useEffect(() => {
 		walletAlert;
+		console.log("alert issued");
 	}, []);
 	useEffect(() => {
 		getBalance;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Competitions } from "./data.js";
-import CompetitionCard from "./competitionCard.jsx";
+import CompetitionCard from "./competitionCard2.jsx";
 import "./Competition.css";
 
 const Competition = () => {
