@@ -26,19 +26,19 @@ Also integration of nextjs with solidity contracts was quite difficult due to a 
            <p></p>
 </details>
 
-![Blockchain Contracts in Solidity with Chainlink](Images/home.png)
+![Blockchain Contracts in Solidity with Chainlink](./public/assets/screenShots/1.png)
 
 ### How we Integrated Chainlink
 
 > Our journeyinto the blockchain realm led us to develop smart contracts using Solidity, with a particular focus on integrating Chainlink's technology. This crucial step ensures the authentication and tracking of meme popularity, guaranteeing proper recognition and rewards for creators.
 
-![Backend with Express-based Python Script](Images/login.jpg)
+![Backend with Express-based Python Script](./public/assets/screenShots/2.png)
 
 ### Reddit API Integration
 
 > > The login page is user-friendly, remembering users to eliminate repeated sign-ins.
 
-![Frontend with Next.js](Images/gps.png)
+![Frontend with Next.js](./public/assets/screenShots/3.png)
 
 ### Crafting the Memex Experience
 
@@ -48,7 +48,7 @@ Also integration of nextjs with solidity contracts was quite difficult due to a 
 
 > <span style="color: #f2cf4a; font-family: Babas; font-size: 1.5em;">2) _About Us_:</span> Learn more about our team's objective to bring out the best in users and provide a helping hand.
 
-![About us](Images/about_us.png)
+![About us](./public/assets/screenShots/4.png)
 
 ---
 
