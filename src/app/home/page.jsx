@@ -3,10 +3,9 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
 import "./home.css";
-import { Buffer } from "buffer";
-import { create as ipfsHttpClient } from "ipfs-http-client";
-import axios from 'axios';
+import React from "react";
 
+<<<<<<< HEAD
 // Smart contract Integration
 import {
   useWeb3ModalProvider,
@@ -108,3 +107,19 @@ const buyNFT = async(nft)=>{
     </>
   );
 }
+=======
+const Home = () => {
+	return (
+		<>
+			<Navbar />
+			<div className="homeContainer">
+				<Sidebar />
+				<Feed />
+				<Rightbar />
+			</div>
+		</>
+	);
+};
+
+export default Home;
+>>>>>>> adeafa2d421c87f9eef04d2b05fed54cac4ec9cd

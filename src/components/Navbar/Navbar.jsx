@@ -13,7 +13,7 @@ const Navbar = () => {
 				<Link href="/">
 					<img
 						className={styles.logoImage}
-						src="assets/Memex.png"
+						src="/assets/Memex.png"
 						alt="Memex"
 					/>
 				</Link>

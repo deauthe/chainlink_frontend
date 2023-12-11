@@ -98,7 +98,7 @@ contract NFTContest is ERC721URIStorage, Ownable {
             msg.sender,
             address(this),
             false
-        ) 
+        ) ;
         // Add the NFT to the current contest
         uint256 currentContestId = totalContests - 1;
         contests[currentContestId].nftIds.push(tokenId);

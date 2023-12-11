@@ -5,7 +5,7 @@ import {
 	useWeb3ModalProvider,
 	useWeb3ModalAccount,
 } from "@web3modal/ethers5/react";
-import abi from "../../app/home/utils/memeplace.json";
+import abi from "@/components/feed/utils/memeplace.json";
 // IPFS
 
 import { ethers } from "ethers";
