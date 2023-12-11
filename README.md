@@ -54,6 +54,13 @@ Also integration of nextjs with solidity contracts was quite difficult due to a 
 
 ---
 
+<details>
+           <summary><span style="font-family:Papyrus; font-size:1.5em;">How it works</span></summary>
+           <p></p>
+</details>
+
+![Blockchain Contracts in Solidity with Chainlink](./public/assets/screenShots/6.png)
+
 ## <span style="color: #f2cf4a; font-family: Babas; font-size: 1.2em;"> Achievements We're Proud Of :</span>
 
 ### Revolutionizing Meme Authentication and Marketplace
