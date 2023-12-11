@@ -1,5 +1,7 @@
 # Memex: Meme Authentication and Marketplace Platform
 
+![Blockchain Contracts in Solidity with Chainlink](./public/assets/Memex.jpeg)
+
 ## 🛠 &nbsp;<span style="color: #f2cf4a; font-family: Babas; font-size: 1.4em;">Tech Stack</span>
 
 <span style="font-family: 'Arial, Helvetica, sans-serif';">NextJs,Chainlink,Web3.js,Ethereum,Express,Reddit-Api,Solidity</span>
@@ -36,7 +38,7 @@ Also integration of nextjs with solidity contracts was quite difficult due to a 
 
 ### Reddit API Integration
 
-> > The login page is user-friendly, remembering users to eliminate repeated sign-ins.
+> > In the backend, we harnessed the power of Express and Python to seamlessly interact with the Reddit API. This integration allows us to fetch real-time data from Reddit, enhancing the overall authenticity of memes on our platform.
 
 ![Frontend with Next.js](./public/assets/screenShots/3.png)
 
@@ -46,15 +48,11 @@ Also integration of nextjs with solidity contracts was quite difficult due to a 
 
 ---
 
-> <span style="color: #f2cf4a; font-family: Babas; font-size: 1.5em;">2) _About Us_:</span> Learn more about our team's objective to bring out the best in users and provide a helping hand.
+>
 
 ![About us](./public/assets/screenShots/4.png)
 
 ---
-
-> <span style="color:gold; font-family: Babas; font-size: 1.5em;">3) _Team_:</span> Virtually meet our team.
-
-> <span style="color:gold; font-family: Babas; font-size: 1.5em;">4) _Contact_:</span> Contact us for queries or additional information.
 
 ## <span style="color: #f2cf4a; font-family: Babas; font-size: 1.2em;"> Achievements We're Proud Of :</span>
 
