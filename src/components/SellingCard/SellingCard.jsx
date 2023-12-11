@@ -1,21 +1,22 @@
 import "./sellingCard.css";
-
+import { useRouter } from "next/router";
 import { Users } from "../../components/dummyData";
 import { useState } from "react";
 import { FcLike } from "react-icons/fc";
 
 export default function Post({ post }) {
+	const router = useRouter()
 	const [like, setLike] = useState(post.like);
 	const [isLiked, setIsLiked] = useState(false);
 	// const router = useRouter();
 
 	const likeHandler = () => {
-		setLike(isLiked ? like - 1 : like + 1);
-		setIsLiked(!isLiked);
+	
+		router.push("https://www.reddit.com/r/memes/comments/18f59sx/yes_she_actually_said_all_of_that/")
 	};
 
 	const handleBuy = async () => {
-		//unlist the post
+		//unlist the postS
 		// route to the buy page
 		// add the post to the new owner
 		console.log(post);

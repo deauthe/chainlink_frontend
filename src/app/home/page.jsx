@@ -16,7 +16,7 @@ import { ethers } from "ethers";
 import abi from "./utils/memeplace.json";
 const Abi = abi;
 const Address = '0x4dA194bC069bDf5a5ee580632dAF0b986b45287f';
-
+const ChainlinkAddress = ''
 
 export default function Home() {
   const { address, chainId, isConnected } = useWeb3ModalAccount();
@@ -34,6 +34,8 @@ async function getContract() {
   const contract = new ethers.Contract(Address, Abi, signer);
   return contract;
 }
+
+
 
 
 //   upload to Ipfs 
@@ -98,7 +100,7 @@ const buyNFT = async(nft)=>{
     <>
       <Navbar />
       <div className="homeContainer">
-        <button onClick={fetchNFTs}>fetcddhNFTs</button>
+        <button  className="button" onClick={fetchNFTs}>fetcddhNFTs</button>
         <Sidebar />
         <Feed  />
         <Rightbar />
